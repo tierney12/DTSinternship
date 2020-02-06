@@ -1,0 +1,17 @@
+@extends('layouts.app', ['pageTitle' => '$MODEL_NAME_PLURAL_HUMAN$'])
+
+@section('breadcrumbs')
+    <li><a href="{{ url('/') }}">Home</a></li>
+    <li><a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.index') }}">$MODEL_NAME_PLURAL_HUMAN$</a></li>
+    <li class="active">Create {{ strtolower('$MODEL_NAME_HUMAN$') }}</li>
+@endsection
+
+@section('content')
+    @include('core-templates::common.errors')
+
+    <div class="row">
+        <div class="col-sm-12">
+            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.form')
+        </div>
+    </div>
+@endsection

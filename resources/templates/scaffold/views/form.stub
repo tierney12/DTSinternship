@@ -1,0 +1,15 @@
+<form method="POST" action="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.store') }}">
+    {{ csrf_field() }}
+    <div class="panel">
+        <div class="panel-body">
+            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+        </div>
+    </div>
+
+    <!-- Submit Field -->
+    <div class="row">
+        <div class="col-sm-12 form-group text-right">
+            <input type="submit" class="btn btn-success" value="Save">
+        </div>
+    </div>
+</form>

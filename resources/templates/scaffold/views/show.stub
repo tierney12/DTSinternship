@@ -1,0 +1,37 @@
+@extends('layouts.app', ['pageTitle' => '$MODEL_NAME_HUMAN$'])
+
+@section('breadcrumbs')
+    <li><a href="{{ url('/') }}">Home</a></li>
+    <li><a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.index') }}">$MODEL_NAME_PLURAL_HUMAN$</a></li>
+    <li class="active">$MODEL_NAME$ Details</li>
+@endsection
+
+@section('buttons')
+    <div class="pull-right p-l-10">
+        <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.edit', $$MODEL_NAME_CAMEL$) }}" class="btn btn-info">Edit</a>
+        <button type="button" class="btn btn-danger delete-button" data-url="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.destroy', $$MODEL_NAME_CAMEL$) }}">
+            Delete
+        </button>
+    </div>
+@endsection
+
+@section('content')
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                    <div class="col-sm-12">
+                        <div class="d-table">
+                            <div class="t-cell">
+                                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show_fields')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    $TABS_INCLUDE$
+
+    $MODAL_INCLUDE$
+@endsection

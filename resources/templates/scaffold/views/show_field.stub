@@ -1,0 +1,8 @@
+<div class="t-row">
+    <div class="t-cell text-right">
+        <strong>$FIELD_NAME_TITLE$</strong>
+    </div>
+    <div class="t-cell">
+        {!! $$MODEL_NAME_CAMEL$->$FIELD_NAME$ !!}
+    </div>
+</div>

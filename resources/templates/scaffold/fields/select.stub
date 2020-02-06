@@ -1,0 +1,19 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$') !!}
+    <select name="$FIELD_NAME$" id="$FIELD_NAME$" class="form-control chosen-select" data-placeholder="Select a $FIELD_NAME_TITLE$">
+     	<option></option>
+        <option class="fly-add-option">Add a $FIELD_NAME_TITLE$</option>
+     	@foreach($INPUT_ARR$ as $id => $name)
+     		<option value="{{ $id }}" {{ isset($$MODEL_NAME_CAMEL$) && $$MODEL_NAME_CAMEL$->$FIELD_NAME$ == $id ? 'selected' : '' }}>{{ $name }}</option>
+     	@endforeach
+    </select>
+    <input
+        data-role="fly-add"
+        data-target="#$FIELD_NAME$"
+        data-source="{{ route('$ROUTE_NAME$.create') }}"
+        data-on-success="addNewOption"
+        type="button"
+        class="btn btn-success btn-xs fly-add hidden"
+        value="Add New">
+</div>

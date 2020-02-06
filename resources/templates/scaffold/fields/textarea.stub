@@ -1,0 +1,8 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="col-sm-12 col-lg-12">
+    <div class="form-group">
+        <label for="$FIELD_NAME$">$FIELD_NAME_TITLE$</label>
+        <textarea name="$FIELD_NAME$" id="$FIELD_NAME$" class="form-control"
+        >{!! isset($$MODEL_NAME_CAMEL$) ? $$MODEL_NAME_CAMEL$->$FIELD_NAME$ : old('$FIELD_NAME$') !!}</textarea>
+    </div>
+</div>

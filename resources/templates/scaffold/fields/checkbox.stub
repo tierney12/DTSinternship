@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="checkbox checkbox-wl">
+            <input type="hidden" name="$FIELD_NAME$" value="0">
+            <input id="$FIELD_NAME$"
+                   type="checkbox"
+                   name="$FIELD_NAME$"
+                   value="1" {{ isset($$MODEL_NAME_CAMEL$) ? ($$MODEL_NAME_CAMEL$->$FIELD_NAME$ ? 'checked' : '') : '' }}>
+            <label for="$FIELD_NAME$">$FIELD_NAME_TITLE$</label>
+        </div>
+    </div>
+</div>

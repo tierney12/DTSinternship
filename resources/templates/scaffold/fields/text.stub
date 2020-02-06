@@ -1,0 +1,10 @@
+<div class="col-sm-6">
+    <div class="form-group {{ $errors->has('$FIELD_NAME$') ? ' has-error' : '' }}">
+        <label for="$FIELD_NAME$">$FIELD_NAME_TITLE$</label>
+        <input name="$FIELD_NAME$" id="$FIELD_NAME$" class="form-control"
+               value="{{ isset($$MODEL_NAME_CAMEL$) ? $$MODEL_NAME_CAMEL$->$FIELD_NAME$ : old('$FIELD_NAME$') }}">
+        @if ($errors->has('$FIELD_NAME$'))
+            <small class="help-block">{{ $errors->first('$FIELD_NAME$') }}</small>
+        @endif
+    </div>
+</div>

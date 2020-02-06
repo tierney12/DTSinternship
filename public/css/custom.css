@@ -1,0 +1,18 @@
+.no-border thead tr th, .no-border tbody tr td, .no-border tbody tr th  {
+	border: 0px;
+	padding: 5px;
+}
+
+.top-right-table tr td {
+	padding: 5px;
+}
+
+@media screen and (max-width: 550px) {
+    .button-row {
+        margin-top: 70px !important;
+    }
+}
+
+.bg-title {
+	overflow: unset !important;
+}

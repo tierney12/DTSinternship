@@ -1,0 +1,15 @@
+<table class="table table-hover">
+    <thead>
+        <tr class="text-uppercase">
+            $FIELD_HEADERS$
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
+        <tr class="clickable"
+            data-url="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.show', $$MODEL_NAME_CAMEL$) }}">
+            $FIELD_BODY$
+        </tr>
+    @endforeach
+    </tbody>
+</table>

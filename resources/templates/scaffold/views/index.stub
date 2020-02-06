@@ -1,0 +1,33 @@
+@extends('layouts.app', ['pageTitle' => '$MODEL_NAME_PLURAL_HUMAN$'])
+
+@section('breadcrumbs')
+    <li><a href="{{ url('/') }}">Home</a></li>
+    <li class="active">$MODEL_NAME_PLURAL_HUMAN$</li>
+@endsection
+
+@section('content')
+    <div class="row">
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        {{ strtoupper('$MODEL_NAME_PLURAL_HUMAN$') }}
+                        <div class="panel-action">
+                            <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_DASHED$.create') }}"
+                               class="btn btn-primary btn-wl">Add {{ strtolower('$MODEL_NAME_HUMAN$') }}</a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            @if($$MODEL_NAME_PLURAL_CAMEL$->count() == 0)
+                                <p class="p-20">There are no {{ strtolower('$MODEL_NAME_PLURAL_HUMAN$') }} available.</p>
+                            @else
+                                @include('admin.$MODEL_NAME_PLURAL_SNAKE$.table')
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        $PAGINATE$
+@endsection
